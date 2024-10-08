@@ -4,7 +4,7 @@ import { useAddTransaction } from "../../hooks/useAddTransaction";
 import { useGetTransactions } from "../../hooks/useGetTransactions";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import { useNavigate } from "react-router-dom";
-
+import React from 'react';
 import "./styles.css";
 import { auth } from "../../config/firebase-config";
 
@@ -99,7 +99,7 @@ export const ExpenseTracker = () => {
         {profilePhoto && (
           <div className="profile">
             {" "}
-            <img className="profile-photo" src={profilePhoto} />
+            <img className="profile-photo" alt="" src={profilePhoto} />
             <button className="sign-out-button" onClick={signUserOut}>
               Sign Out
             </button>
