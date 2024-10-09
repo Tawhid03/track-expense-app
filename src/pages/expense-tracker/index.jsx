@@ -5,7 +5,7 @@ import { useGetTransactions } from "../../hooks/useGetTransactions";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import "./styles.css"; // Add your styles
+import "./styles.css"; // Import your styles
 import { auth } from "../../config/firebase-config"; // Firebase authentication
 
 export const ExpenseTracker = () => {
@@ -70,7 +70,7 @@ export const ExpenseTracker = () => {
         <div className="balance-section">
           <h2>Your Balance</h2>
           <div className="balance">
-            {balance >= 0 ? `$${balance}` : `-$${Math.abs(balance)}`}
+            {balance >= 0 ? `$${balance.toFixed(2)}` : `-$${Math.abs(balance).toFixed(2)}`}
           </div>
         </div>
 
@@ -78,11 +78,11 @@ export const ExpenseTracker = () => {
         <div className="summary">
           <div className="income">
             <h4>Income</h4>
-            <p>${income}</p>
+            <p>${income.toFixed(2)}</p>
           </div>
           <div className="expenses">
             <h4>Expenses</h4>
-            <p>${expenses}</p>
+            <p>${expenses.toFixed(2)}</p>
           </div>
         </div>
 
@@ -137,7 +137,7 @@ export const ExpenseTracker = () => {
               <li key={index} className={`transaction ${transactionType}`}>
                 <span>{description}</span>
                 <span className="amount">
-                  {transactionType === "expense" ? "-" : "+"}${transactionAmount}
+                  {transactionType === "expense" ? "-" : "+"}${parseFloat(transactionAmount).toFixed(2)}
                 </span>
               </li>
             );
