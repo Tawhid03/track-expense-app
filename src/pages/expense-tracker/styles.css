@@ -10,44 +10,141 @@
   .expense-tracker h1 {
     font-size: 40px;
   }
-  .expense-tracker button {
-    margin-left: 10px;
+  
+  .expense-tracker-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
   }
+  
+  /* Avatar & Profile Section */
   .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 200px;
+    margin-bottom: 20px;
   }
-  .profile-photo {
-    width: 200px;
+  
+  .avatar {
     border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
   }
   
   .sign-out-button {
-    border: none;
-    margin-top: 50px;
-    width: 150px;
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 22px;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
     font-weight: bold;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
   
   .sign-out-button:hover {
-    background: #3cb0fd;
-  
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-    cursor: pointer;
+    background-color: #e53935;
   }
   
+  /* Balance Section */
+  .balance-section {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .balance {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #37474f;
+  }
+  
+  /* Highlight positive/negative balances */
+  .balance.positive {
+    color: green;
+  }
+  
+  .balance.negative {
+    color: red;
+  }
+  
+  /* Summary Section for Income and Expenses */
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .income, .expenses {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .income h4, .expenses h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #37474f;
+  }
+  
+  .income p {
+    font-size: 1.5rem;
+    color: green;
+  }
+  
+  .expenses p {
+    font-size: 1.5rem;
+    color: red;
+  }
+  
+  /* Form Styles */
+  .add-transaction {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-transaction input[type="text"],
+  .add-transaction input[type="number"] {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .transaction-type {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  /* Transaction Button */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #388e3c;
+  }
+  
+  /* Transaction List Styles */
   .transactions {
-    margin-left: 430px;
     margin-top: 20px;
     padding-left: 10px;
     width: 600px;
@@ -55,3 +152,40 @@
     overflow: auto;
     border: 3px solid #023047;
   }
+  
+  .transactions ul {
+    list-style-type: none;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  /* Align transaction description and amount */
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Income and Expense Styling */
+  .transaction.expense {
+    background-color: #ffcdd2;
+    color: red;
+    border-left: 5px solid #d32f2f;
+  }
+  
+  .transaction.income {
+    background-color: #c8e6c9;
+    color: green;
+    border-left: 5px solid #00c853;
+  }
+  
+  /* Transaction Amount Styling */
+  .transaction .amount {
+    text-align: right;
+    width: 100px;
+  }
+  
