@@ -5,7 +5,7 @@ import { useGetTransactions } from "../../hooks/useGetTransactions";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import "./styles.css"; // Import your styles
+import "./styles.css"; 
 import { auth } from "../../config/firebase-config"; // Firebase authentication
 
 export const ExpenseTracker = () => {
